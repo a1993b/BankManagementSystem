@@ -15,15 +15,21 @@ app.config(['$routeProvider',function($routeProvider){
     });
 }]);
 app.controller('BMSController',function($scope,$http,$location){
-	var SERVER_ENDPOINT="http://bankmanagementsystem-akshaybhatt.rhcloud.com";
+	/*var SERVER_ENDPOINT="http://bankmanagementsystem-akshaybhatt.rhcloud.com";*/
+	var SERVER_ENDPOINT="/bankmanagementsystem";
 	$scope.login=function(){
+		
+		$scope.login= false;
+		
 		var data={
-				"customerID":$scope.username,
+				"customerID":$scope.customerId,
 				"password":$scope.password
 		};
 		$http.post(SERVER_ENDPOINT+"/login",data).success(function(data,status,headers,config){
-			console.log(status);
-			alert("SUCCESSFULLY LOGGED IN");
+			console.log(data);
+			$scope.changePassword=true;
+			alert(data.object);
+			
 		}).error(function(data,status,headers,config){
 			console.log(status);
 		});

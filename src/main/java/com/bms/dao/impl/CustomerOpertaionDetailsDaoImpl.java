@@ -21,15 +21,13 @@ public class CustomerOpertaionDetailsDaoImpl extends SessionFactoryInstanceClass
 			query.setParameter("custID",data.getCustomerId());
 			query.setParameter("password",data.getCustomerPassword());
 			CustomerDetail customerDetails=(CustomerDetail) query.uniqueResult();
-			if(customerDetails== null){
-				 throw new BMSException(ErrorCode.INVALID_RECORD);
-			}
+			
 			
 			return customerDetails;
 		}
 		catch(Exception exception){
 			exception.printStackTrace();
-			throw new BMSException(ErrorCode.INVALID_RECORD);
+			throw new BMSException(ErrorCode.SERVICE_UNAVAILABLE);
 		}
 	}
 
@@ -45,6 +43,38 @@ public class CustomerOpertaionDetailsDaoImpl extends SessionFactoryInstanceClass
 		catch(Exception exception){
 			throw new BMSException(ErrorCode.SERVICE_UNAVAILABLE);
 		}
+	}
+
+	@Override
+	public CustomerDetail getCustomerDetails(CustomerDetail data) throws BMSException {
+		try{
+			Query query= getSessionInstance().createQuery("FROM CustomerDetail details WHERE details.customerId= :custID");
+			query.setParameter("custID",data.getCustomerId());
+			CustomerDetail customerDetails=(CustomerDetail) query.uniqueResult();
+			return customerDetails;
+		}
+		catch(Exception exception){
+			exception.printStackTrace();
+			throw new BMSException(ErrorCode.SERVICE_UNAVAILABLE);
+		}
+		
+	}
+
+	@Override 
+	public void updateCustomerAttemptCount(CustomerDetail data) throws BMSException {
+		
+		try{
+			Session session= getSessionInstance();
+		
+		session.beginTransaction();
+		session.merge(data);
+		session.getTransaction().commit();
+		System.out.println("update  wuccess");
+		}
+		catch(Exception exception){
+			throw new BMSException(ErrorCode.SERVICE_UNAVAILABLE);
+		}
+		
 	}
 
 }

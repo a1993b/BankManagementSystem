@@ -2,8 +2,10 @@ package com.bms.common;
 
 public enum ErrorCode {
 	
-	INVALID_RECORD("Incorrect ID or password"),
-	SERVICE_UNAVAILABLE("Service is temporary unavailable");
+	INVALID_RECORD("Invalid Customer ID"),
+	SERVICE_UNAVAILABLE("Service is temporary unavailable"),
+	INCORRECT_PASSWORD("Incorrect Password"),
+	MAX_COUNT_EXCEEDED("Number Of login attempt Exceeded. Please try login after some time");
 	
 	private String message;
 	

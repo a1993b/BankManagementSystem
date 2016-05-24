@@ -9,4 +9,8 @@ public interface CustomerOpertaionDetailsDao {
 	public CustomerDetail isValidUser(CustomerDetail data) throws BMSException;
 	
 	public void enrollCustomerDetails(CustomerDetail data) throws BMSException;
+	
+	public CustomerDetail getCustomerDetails(CustomerDetail data) throws BMSException;
+	
+	public void updateCustomerAttemptCount(CustomerDetail data) throws BMSException;
 }

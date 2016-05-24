@@ -1,3 +1,6 @@
+html, body{
+		height: 100%;
+}
 .info-text-align{
 	padding-left: 4.2%;
 }
@@ -16,4 +19,91 @@
 }
 .width-30-percent{
 	width: 30%;
+}
+.separator {
+    border-right: 1px solid #dfdfe0; 
+}
+.icon-btn-save {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.input-group {
+    margin-bottom:10px; 
+}
+.btn-save-label {
+    position: relative;
+    left: -12px;
+    display: inline-block;
+    padding: 6px 12px;
+    background: rgba(0,0,0,0.15);
+    border-radius: 3px 0 0 3px;
+}
+.main-nav{
+	width: 84%;
+	margin-left: 8%;
+}
+@media (min-width: 768px) {
+  .sidebar-nav .navbar .navbar-collapse {
+    padding: 0;
+    max-height: none;
+  }
+  .sidebar-nav .navbar ul {
+    float: none;
+  }
+  .sidebar-nav .navbar ul:not {
+    display: block;
+  }
+  .sidebar-nav .navbar li {
+    float: none;
+    display: block;
+  }
+  .sidebar-nav .navbar li a {
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+}
+.navbar-alignment{
+	float: none;
+	margin-left: 20%;
+}
+.width-100-percent{
+	width: 100%;
+}
+.width-70-percent{
+	width: 70%;
+}
+.width-85-percent{
+	width: 85%;
+}
+.footer{
+	hieght: 145px;
+	background-color: #e7e7e7;
+}
+.footer-app-container{
+	width: 40%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    font-size: 28px;
+}
+.footer-social-links-container{
+	padding-top: 3%;
+	float: right;
+	text-align: right;
+}
+.ul-list-container{
+	list-style-type: none;
+    font-size: 28px;
+}
+.padding-right-8{
+	padding-right: 8px;
+}
+.display-inline-block{
+	display: inline-block;
+}
+.display-block, .footer-social-links-container p{
+	display: block;
+}
+.content-wrapper{
+	min-height: 100%;
+	margin-bottom: -145px;
 }
